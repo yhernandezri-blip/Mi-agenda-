@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ec4899">
+  <title>Mi Agenda Universitaria</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="contenedor">
+    <header class="hero">
+      <span id="estado" class="estado">En línea</span>
+      <div class="avatar">Y</div>
+      <p class="hola">¡Hola, Yojana! 👋</p>
+      <h1>Mi Agenda Universitaria</h1>
+      <p class="autor">Organiza tus días con estilo 🌸 · by Yojana Hernandez</p>
+      <p id="mensaje" class="mensaje"></p>
+      <button id="instalar" type="button" class="instalar">📲 Descargar app</button>
+    </header>
+
+    <section class="stats">
+      <div class="stat"><i>📋</i><b id="sTotal">0</b><span>Total</span></div>
+      <div class="stat"><i>⏳</i><b id="sPend">0</b><span>Pendientes</span></div>
+      <div class="stat"><i>🎀</i><b id="sHechas">0</b><span>Listas</span></div>
+      <div class="barra"><div id="progreso"></div></div>
+    </section>
+
+    <section class="panel form">
+      <h2 id="formTitulo">✨ Nueva tarea</h2>
+      <input id="titulo" type="text" placeholder="¿Qué tienes que hacer?">
+      <input id="asignatura" type="text" list="asignaturas" placeholder="📚 Asignatura">
+      <datalist id="asignaturas"></datalist>
+      <div class="fila">
+        <label>📅 Fecha de entrega <input id="fecha" type="date"></label>
+        <label>⭐ Prioridad
+          <select id="prioridad">
+            <option value="alta">🔴 Alta</option>
+            <option value="media" selected>🟡 Media</option>
+            <option value="baja">🟢 Baja</option>
+          </select>
+        </label>
+      </div>
+      <div class="fila">
+        <button id="agregar" type="button">💗 Agregar tarea</button>
+        <button id="cancelar" type="button" class="suave" hidden>Cancelar</button>
+      </div>
+    </section>
+
+    <section class="panel filtros">
+      <input id="buscar" type="search" placeholder="🔍 Buscar tarea...">
+      <select id="fEstado">
+        <option value="todas">Todas</option>
+        <option value="pendientes">Pendientes</option>
+        <option value="hechas">Completadas</option>
+      </select>
+      <select id="fAsig"><option value="">Todas las asignaturas</option></select>
+      <button id="limpiar" type="button" class="suave">🧹 Borrar listas</button>
+    </section>
+
+    <section id="tareas" class="tareas"></section>
+    <p id="vacio" class="vacio" hidden>🌷 Aún no hay tareas por aquí</p>
+
+    <footer>Hecho por 💕Yojana Hernandez · Universidad del Tolima · 2026</footer>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
